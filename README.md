@@ -18,4 +18,4 @@ node index -a remove -i 7
 node index -a add -n Geralt -e geralt@mail.com -p 012-345-67-89
 ```
 
-[Test results](https://monosnap.com/file/D849IKtXt9OKdCELaJ5NQ65UTey9Tb)
+[Test results](https://monosnap.com/file/epnm8WtZ50HLBHEd8YufqgGHVsQbSA)
