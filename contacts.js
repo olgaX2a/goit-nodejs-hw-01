@@ -30,6 +30,7 @@ async function getContactById(contactId) {
     const contact = contacts.find((el) => el.id === idToSearch);
     if (!contact) {
       console.log(`⛔ contact with id ${contactId} is not found`);
+      return
     }
     console.log(`✔ contact `, contact);
   } catch (error) {
@@ -44,6 +45,7 @@ async function removeContact(contactId) {
     const indexToRemove = contacts.findIndex((el) => el.id === idToSearch);
     if (indexToRemove < 0) {
       console.log(`⛔ contact with id ${contactId} does not exist`);
+      return
     }
     contacts.splice(indexToRemove, 1);
     await updateContactsDb(contacts);
@@ -67,7 +69,7 @@ async function addContact(name, email, phone) {
     await updateContactsDb(contacts);
     console.log(`✔ contact added with id ${id}`);
   } catch (error) {
-    throw new Error(`❌ oops, unable to add contact`);
+    console.error(`❌ oops, unable to add contact`);
   }
 }
 
